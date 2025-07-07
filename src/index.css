@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 70% 29%;  /* Green */
+    --primary-foreground: 0 0% 100%;  /* White */
+
+    --secondary: 45 100% 51%;  /* Yellow */
+    --secondary-foreground: 142 70% 29%;  /* Green */
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 0 85% 45%;  /* Red */
+    --accent-foreground: 0 0% 100%;  /* White */
+
+    --destructive: 0 85% 45%;  /* Red */
+    --destructive-foreground: 0 0% 100%;  /* White */
+
+    --border: 142 70% 29%;  /* Green */
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 70% 29%;  /* Green */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 142 70% 10%;  /* Dark Green */
+    --sidebar-foreground: 0 0% 100%;  /* White */
+    --sidebar-primary: 45 100% 51%;  /* Yellow */
+    --sidebar-primary-foreground: 142 70% 29%;  /* Green */
+    --sidebar-accent: 142 70% 29%;  /* Green */
+    --sidebar-accent-foreground: 0 0% 100%;  /* White */
+    --sidebar-border: 142 70% 15%;  /* Dark Green */
+    --sidebar-ring: 45 100% 51%;  /* Yellow */
+  }
+
+  .dark {
+    --background: 142 70% 10%;  /* Dark Green */
+    --foreground: 0 0% 100%;  /* White */
+
+    --card: 142 70% 10%;  /* Dark Green */
+    --card-foreground: 0 0% 100%;  /* White */
+
+    --popover: 142 70% 10%;  /* Dark Green */
+    --popover-foreground: 0 0% 100%;  /* White */
+
+    --primary: 0 0% 100%;  /* White */
+    --primary-foreground: 142 70% 29%;  /* Green */
+
+    --secondary: 45 100% 51%;  /* Yellow */
+    --secondary-foreground: 142 70% 10%;  /* Dark Green */
+
+    --muted: 142 70% 15%;  /* Dark Green */
+    --muted-foreground: 0 0% 80%;  /* Light White */
+
+    --accent: 0 85% 45%;  /* Red */
+    --accent-foreground: 0 0% 100%;  /* White */
+
+    --destructive: 0 85% 45%;  /* Red */
+    --destructive-foreground: 0 0% 100%;  /* White */
+
+    --border: 142 70% 15%;  /* Dark Green */
+    --input: 142 70% 15%;  /* Dark Green */
+    --ring: 45 100% 51%;  /* Yellow */
+    
+    --sidebar-background: 142 70% 10%;  /* Dark Green */
+    --sidebar-foreground: 0 0% 100%;  /* White */
+    --sidebar-primary: 45 100% 51%;  /* Yellow */
+    --sidebar-primary-foreground: 142 70% 10%;  /* Dark Green */
+    --sidebar-accent: 142 70% 15%;  /* Dark Green */
+    --sidebar-accent-foreground: 0 0% 100%;  /* White */
+    --sidebar-border: 142 70% 15%;  /* Dark Green */
+    --sidebar-ring: 45 100% 51%;  /* Yellow */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-white text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative px-3 py-2 text-base font-medium transition-all duration-300 ease-in-out;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bg-fc-yellow h-[2px] w-0 left-0 -bottom-1 rounded-full transition-all duration-300 ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .active-nav-link::after {
+    @apply w-full;
+  }
+  
+  .btn-primary {
+    @apply bg-fc-green text-white px-6 py-3 rounded-md shadow-md transition-all duration-300 hover:bg-fc-darkGreen flex items-center justify-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-fc-green border border-fc-green px-6 py-3 rounded-md shadow-sm transition-all duration-300 hover:bg-fc-green hover:text-white flex items-center justify-center gap-2;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .glassmorphism {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+  
+  .page-transition {
+    @apply animate-fade-in;
+  }
+  
+  .section-padding {
+    @apply py-12 px-4 sm:px-6 md:px-8 lg:px-10;
+  }
+  
+  .match-card {
+    @apply bg-gradient-to-r from-fc-darkGreen to-fc-green rounded-lg overflow-hidden shadow-lg border-l-4 border-fc-yellow;
+  }
+  
+  .section-header {
+    @apply text-3xl font-bold text-gray-900 mb-6 border-l-4 pl-4;
+  }
+  
+  .featured-section {
+    @apply bg-fc-darkGreen text-white py-12;
+  }
+  
+  .news-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  .fc-heading {
+    @apply font-bold text-fc-yellow;
+  }
+  
+  /* Animation for page transitions */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-slide-up {
+    animation: slideIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .horizontal-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
