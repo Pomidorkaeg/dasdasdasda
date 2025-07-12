@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "main": "electron-main.js",
-  "homepage": "https://pomidorkaeg.github.io/Sa",
+  "homepage": "https://pomidorkaeg.github.io/sdf",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
